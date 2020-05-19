@@ -1,0 +1,6 @@
+# log_format main '[31m$remote_addr[0m - $remote_user [$time_local] [35m$status[0m [44m $host [0m [34m"$request"[0m $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"';
+log_format main '[31m$remote_addr[0m - $remote_user [$time_local] [35m$status[0m '
+                '[44m $host [0m [34m"$request"[0m $body_bytes_sent '
+                '"$http_referer" "$http_user_agent" "$http_x_forwarded_for"';
+access_log  /var/log/nginx/access.log  main  if=$loggable;
+error_log syslog:server=${LOG_HOST}:${LOG_PORT},severity=notice;
