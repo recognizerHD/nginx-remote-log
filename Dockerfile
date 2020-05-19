@@ -3,7 +3,7 @@ LABEL maintainer="Paul Warren <paul@paulwarren.ca>"
 
 COPY ./default.template /etc/nginx/conf.d/
 COPY ./nginx.conf /etc/nginx/
-COPY ./errors.template /etc/nginx/conf.d/
+COPY ./logs.template /etc/nginx/conf.d/
 
 ENV LOG_HOST="0"
 ENV LOG_PORT="0"
